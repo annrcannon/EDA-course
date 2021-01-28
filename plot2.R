@@ -9,6 +9,7 @@ elec.sub <- electric[electric$Date == "1/2/2007"| electric$Date == "2/2/2007",]
 #Create date/time variable
 elec.sub$DateTime <- as.POSIXct(paste(elec.sub$Date, elec.sub$Time), 
                                 format="%d/%m/%Y %H:%M:%S")
+elec.sub$Global_active_power <- as.numeric(elec.sub$Global_active_power)
 
 #Create plot
 png(file="plot2.png", width=480, height=480)
